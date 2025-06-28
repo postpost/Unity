@@ -22,7 +22,7 @@ public class MovementHub : MonoBehaviour
         //как сделать так, чтобы платформа всегда двигалась смотря вперед только transform.right?
         transform.position = Vector3.MoveTowards(transform.position, _currentTarget, _speed * Time.deltaTime);
         transform.LookAt(_currentTarget);
-        if (transform.position.x - _currentTarget.x == 0) //почему тут нельзя просто написать Vector3.Distance() == 0 ?
+        if (Vector3.Distance(transform.position, _currentTarget) <= 0)
         {
             _currentIndex = (_currentIndex + 1) % _points.Length;
             _currentTarget = _points[_currentIndex].position;

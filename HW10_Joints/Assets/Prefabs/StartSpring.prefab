@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 4153412783645891229}
   - component: {fileID: 5721681192426730002}
   - component: {fileID: 8517123106863290750}
-  m_Layer: 0
+  - component: {fileID: 1699639390906298203}
+  m_Layer: 6
   m_Name: StartSpring
-  m_TagString: Untagged
+  m_TagString: Spring
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,9 +31,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6658281275048023586}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.12178054, z: -0, w: 0.9925571}
+  m_LocalRotation: {x: 0, y: -0.12178269, z: 0, w: 0.9925568}
   m_LocalPosition: {x: -1.8, y: 0.629, z: 1.555}
-  m_LocalScale: {x: 0.77531, y: 0.085939005, z: 0.025573}
+  m_LocalScale: {x: 1.7341383, y: 0.8756539, z: 0.070686385}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a3ab21ac264d9c340b54b629d6f9cbc0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +95,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6658281275048023586}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7b71005483ec7f8498085e30ee148b33, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -144,14 +145,14 @@ HingeJoint:
   m_GameObject: {fileID: 6658281275048023586}
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: -0.5, y: 0.50000006, z: 0}
+  m_Anchor: {x: -0.5, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.8, y: 0.67196953, z: 1.5422134}
+  m_ConnectedAnchor: {x: -0.6996108, y: -11.70211, z: -2.671449}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
-    spring: 10
+    spring: 500
     damper: 0
     targetPosition: 0
   m_UseMotor: 0
@@ -159,13 +160,13 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
     min: 0
-    max: 0
-    bounciness: 0
+    max: 200
+    bounciness: 1
     bounceMinVelocity: 0.2
     contactDistance: 0
   m_BreakForce: Infinity
@@ -186,5 +187,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30b912caaf95d54b910489ec34ae99d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springTimer: {fileID: 0}
-  angle: 90
+  springStartTime: 2
+  springRestartTime: 3
+  angle: 120
+--- !u!114 &1699639390906298203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658281275048023586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb32c9cdb7cb0643a45d5b977cb86c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
